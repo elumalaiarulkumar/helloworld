@@ -1,50 +1,215 @@
 <!DOCTYPE html>
 <!-- index.html is the page a browser loads first. It holds the CONTENT (structure). -->
+<!-- DRAFT COPY: all wording below is a first draft for you to review and edit. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <!-- Makes the page scale properly on phones -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Arul's World!</title>
+  <title>Tend: wellbeing for work and life</title>
+  <meta name="description" content="Tend offers calm, practical support for working professionals and young adults.">
+  <!-- Fonts from Google Fonts: Outfit for headings, Work Sans for text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Work+Sans:wght@400;500&display=swap">
   <!-- Link the stylesheet (how things LOOK) -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Arul Elumalai's World! 👋</h1>
-    <p class="tagline">My first website, built by hand and published to the internet.</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HERO: big photo panel with the navigation inside it -->
+  <header class="panel hero" id="top">
+    <!-- PHOTO: to use a real photo, add it as hero.jpg and see the note in style.css (.photo-hero) -->
+    <div class="photo photo-hero" role="img" aria-label="Placeholder for a calm outdoor photo"></div>
+
+    <nav class="nav" aria-label="Main">
+      <a class="logo" href="#top" aria-label="Tend home">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M12 21V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M12 13c0-4 3-7 8-7 0 5-3 8-8 7z" fill="currentColor"/>
+          <path d="M12 11C12 7.5 9.5 5 5 5c0 4.5 2.5 6.5 7 6z" fill="currentColor" opacity=".7"/>
+        </svg>
+        Tend
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">For work</a></li>
+        <li><a href="#young-adults">For young adults</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a class="btn btn-light" href="#contact">Contact us</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <h1>Room to breathe, at work and in life.</h1>
+      <div class="hero-side">
+        <p>Calm, practical support for working professionals and young adults, built around small habits that hold up on busy weeks.</p>
+        <a class="btn btn-light" href="#contact">Get in touch</a>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>About me</h2>
-      <div class="about">
-        <!-- To use your own photo: upload it as arul.jpg next to index.html -->
-        <img class="avatar" src="arul.jpg" alt="Photo of Arul Elumalai"
-             onerror="this.onerror=null; this.src='avatar-placeholder.svg';">
-        <p>Arul leads Gordian and Fortive's Facilities and Asset Lifecycle Group, including Accruent and ServiceChannel. A business builder and technologist with 25+ years of experience, he previously held leadership roles at F5, McKinsey, and Microsoft. He lives in Seattle with his wife and son, and enjoys golfing and woodworking.</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Things I'm learning</h2>
-      <ul>
-        <li><strong>HTML</strong> - the content and structure</li>
-        <li><strong>CSS</strong> - the colors, fonts, and layout</li>
-        <li><strong>JavaScript</strong> - the interactivity</li>
+  <main id="main">
+    <!-- ABOUT: pale sage panel -->
+    <section class="panel panel-sage" id="about" aria-labelledby="about-title">
+      <h2 class="lead" id="about-title">Tend helps people handle stress, pressure and big transitions with steady routines, honest conversation and tools that fit real schedules.</h2>
+      <ul class="pillars">
+        <li>
+          <h3>One-to-one</h3>
+          <p>Private conversations to work through what is weighing on you, at your own pace.</p>
+        </li>
+        <li>
+          <h3>Small groups</h3>
+          <p>Guided sessions with people facing similar things, so nobody figures it out alone.</p>
+        </li>
+        <li>
+          <h3>Free resources</h3>
+          <p>Short guides and exercises you can use today, whether or not you work with us.</p>
+        </li>
       </ul>
     </section>
 
-    <section>
-      <h2>Try it out</h2>
-      <p>This button is powered by JavaScript:</p>
-      <button id="greet-button">Click me</button>
-      <p id="greet-output"></p>
+    <!-- FOR WORK: dark forest panel, checklist + photo -->
+    <section class="panel panel-forest split" id="work" aria-labelledby="work-title">
+      <div>
+        <h2 id="work-title">For work</h2>
+        <p class="section-intro">Support for professionals and the teams around them.</p>
+        <div class="checklist">
+          <details open>
+            <summary>Managing stress and burnout</summary>
+            <p>Spot the early signs, set workable boundaries and build recovery into the week instead of waiting for a holiday.</p>
+          </details>
+          <details>
+            <summary>Leading through pressure</summary>
+            <p>For managers carrying their team's stress as well as their own: how to stay steady and keep people talking.</p>
+          </details>
+          <details>
+            <summary>Workshops for your team</summary>
+            <p>Practical sessions on focus, rest and difficult conversations, run in person or online.</p>
+          </details>
+        </div>
+      </div>
+      <figure class="photo-wrap">
+        <!-- PHOTO: replace with a real photo, see .photo-work in style.css -->
+        <div class="photo photo-work" role="img" aria-label="Placeholder for a photo of a professional at work"></div>
+        <figcaption class="float-card">
+          <span class="float-label"><span class="dot" aria-hidden="true"></span>Team workshops</span>
+          <strong>60 or 90 minutes</strong>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- FOR YOUNG ADULTS: white panel, photo left + checklist right -->
+    <section class="panel split split-reverse" id="young-adults" aria-labelledby="ya-title">
+      <figure class="photo-wrap">
+        <!-- PHOTO: replace with a real photo, see .photo-young in style.css -->
+        <div class="photo photo-young" role="img" aria-label="Placeholder for a photo of a young adult outdoors"></div>
+        <figcaption class="float-card">
+          <span class="float-label"><span class="dot" aria-hidden="true"></span>Weekly check-in</span>
+          <strong>20 minutes</strong>
+        </figcaption>
+      </figure>
+      <div>
+        <h2 id="ya-title">For young adults</h2>
+        <p class="section-intro">Whether you're starting college, a first job or a life of your own, you don't have to work it all out alone.</p>
+        <div class="checklist">
+          <details open>
+            <summary>Students facing exam and study pressure</summary>
+            <p>Ways to plan, rest and keep perspective when everything feels urgent.</p>
+          </details>
+          <details>
+            <summary>Starting your first job</summary>
+            <p>Settling in, asking for help and building habits that protect your energy.</p>
+          </details>
+          <details>
+            <summary>Friendships, family and change</summary>
+            <p>Space to talk through moves, breakups, homesickness and the in-between moments.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESOURCES: free guides + crisis line -->
+    <section class="panel" id="resources" aria-labelledby="resources-title">
+      <h2 class="center" id="resources-title">Resources</h2>
+      <p class="section-intro center">Free, short and practical. Start with whichever fits today.</p>
+      <ul class="resource-grid">
+        <li class="resource">
+          <h3>A five-minute reset</h3>
+          <p>A breathing and grounding exercise for the middle of a hard day.</p>
+          <span class="tag">Exercise</span>
+        </li>
+        <li class="resource">
+          <h3>Sleep when your mind won't stop</h3>
+          <p>Simple evening steps that make rest more likely.</p>
+          <span class="tag">Guide</span>
+        </li>
+        <li class="resource">
+          <h3>Talking to your manager</h3>
+          <p>How to raise workload or wellbeing without dreading the conversation.</p>
+          <span class="tag">Guide</span>
+        </li>
+      </ul>
+      <aside class="crisis" aria-label="Urgent help">
+        <strong>Need help right now?</strong>
+        In the US, call or text <a href="tel:988">988</a> to reach the Suicide &amp; Crisis Lifeline, any time. If you're in immediate danger, call 911.
+      </aside>
+    </section>
+
+    <!-- TEAM -->
+    <section class="panel panel-sage" id="team" aria-labelledby="team-title">
+      <h2 class="center" id="team-title">Team</h2>
+      <ul class="team-grid">
+        <li class="person">
+          <!-- To use a real photo: upload it as arul.jpg next to index.html -->
+          <img class="avatar" src="arul.jpg" alt="Arul Elumalai" width="112" height="112"
+               onerror="this.onerror=null; this.src='avatar-placeholder.svg';">
+          <h3>Arul Elumalai</h3>
+          <p class="role">Founder</p>
+        </li>
+        <li class="person">
+          <div class="avatar avatar-empty" aria-hidden="true"></div>
+          <h3>Team member</h3>
+          <p class="role">Add name and role</p>
+        </li>
+        <li class="person">
+          <div class="avatar avatar-empty" aria-hidden="true"></div>
+          <h3>Team member</h3>
+          <p class="role">Add name and role</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CONTACT: photo panel with an email button -->
+    <section class="panel cta" id="contact" aria-labelledby="contact-title">
+      <!-- PHOTO: replace with a real photo, see .photo-cta in style.css -->
+      <div class="photo photo-cta" role="img" aria-label="Placeholder for a photo of a forest path"></div>
+      <div class="cta-content">
+        <h2 id="contact-title">Contact us</h2>
+        <p>Tell us a little about what's going on and we'll reply within two working days.</p>
+        <!-- EMAIL: replace hello@example.com with your real address (it appears twice) -->
+        <a class="btn btn-light" href="mailto:hello@example.com?subject=Hello%20Tend">Email us</a>
+        <p class="cta-note">or write to <a href="mailto:hello@example.com">hello@example.com</a></p>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Me. Hosted free on GitHub Pages.</p>
+  <footer class="footer">
+    <div class="footer-brand">
+      <span class="logo">Tend</span>
+      <p>Calm, practical support for work and life. Tend is not an emergency service.</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#work">For work</a>
+      <a href="#young-adults">For young adults</a>
+      <a href="#resources">Resources</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact us</a>
+    </nav>
+    <p class="copyright">&copy; <span id="year"></span> Tend</p>
   </footer>
 
   <!-- Load JavaScript (how things BEHAVE) last, so the HTML above exists first -->
