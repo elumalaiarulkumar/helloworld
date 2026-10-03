@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- index.html is the page a browser loads first. It holds the CONTENT (structure). -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the page scale properly on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello, World!</title>
+  <!-- Link the stylesheet (how things LOOK) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Hello, World! 👋</h1>
+    <p class="tagline">My first website, built by hand and published to the internet.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>About me</h2>
+      <p>Edit this paragraph in <code>index.html</code> to tell visitors who you are.</p>
+    </section>
+
+    <section>
+      <h2>Things I'm learning</h2>
+      <ul>
+        <li><strong>HTML</strong> - the content and structure</li>
+        <li><strong>CSS</strong> - the colors, fonts, and layout</li>
+        <li><strong>JavaScript</strong> - the interactivity</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Try it out</h2>
+      <p>This button is powered by JavaScript:</p>
+      <button id="greet-button">Click me</button>
+      <p id="greet-output"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Me. Hosted free on GitHub Pages.</p>
+  </footer>
+
+  <!-- Load JavaScript (how things BEHAVE) last, so the HTML above exists first -->
+  <script src="script.js"></script>
+</body>
+</html>

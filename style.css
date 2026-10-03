@@ -1,0 +1,78 @@
+/* style.css controls how the page LOOKS.
+   Each rule is: selector { property: value; } */
+
+/* Variables: change these to re-theme the whole site */
+:root {
+  --bg: #f7f7fb;
+  --text: #1f2330;
+  --accent: #4f46e5;
+  --card: #ffffff;
+}
+
+/* Dark mode: used automatically when the visitor's device is in dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161f;
+    --text: #e8e9f0;
+    --accent: #8b85ff;
+    --card: #1e2130;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+
+.tagline {
+  opacity: 0.8;
+}
+
+main {
+  max-width: 700px;     /* keep lines readable on wide screens */
+  margin: 0 auto;       /* center the column */
+  padding: 0 1rem;
+}
+
+section {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
