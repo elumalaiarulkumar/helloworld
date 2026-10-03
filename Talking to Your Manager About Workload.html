@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Talking to Your Manager About Workload</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF8F4;
+    --surface: #FFFFFF;
+    --ink: #262F36;
+    --ink-soft: #5B6670;
+    --accent: #4F6F52;
+    --accent-soft: #E7EEE6;
+    --rule: #E4DFD4;
+    --warm: #9C6B43;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1B1F22;
+      --surface: #23282B;
+      --ink: #EDEAE2;
+      --ink-soft: #A9AFA9;
+      --accent: #8FB692;
+      --accent-soft: #2B332C;
+      --rule: #343B3C;
+      --warm: #C9986A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1B1F22;
+    --surface: #23282B;
+    --ink: #EDEAE2;
+    --ink-soft: #A9AFA9;
+    --accent: #8FB692;
+    --accent-soft: #2B332C;
+    --rule: #343B3C;
+    --warm: #C9986A;
+  }
+
+  * { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 28px 80px;
+  }
+
+  header.top {
+    margin-bottom: 40px;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 1.2;
+    color: var(--ink);
+    max-width: 520px;
+  }
+
+  .sub {
+    margin-top: 14px;
+    font-size: 16px;
+    color: var(--ink-soft);
+    max-width: 480px;
+  }
+
+  section {
+    margin-top: 42px;
+  }
+
+  .num {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .num .n {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    color: var(--warm);
+    font-size: 15px;
+  }
+
+  h2 {
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 600;
+    font-size: 21px;
+    color: var(--ink);
+  }
+
+  p {
+    font-size: 15.5px;
+    color: var(--ink);
+    max-width: 580px;
+  }
+
+  p + p { margin-top: 10px; }
+
+  .lede {
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+
+  .script {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 15px;
+    color: var(--ink);
+  }
+
+  .script + .script { margin-top: 10px; }
+
+  ul.plain {
+    margin-top: 10px;
+    padding-left: 0;
+    list-style: none;
+  }
+  ul.plain li {
+    font-size: 15.5px;
+    color: var(--ink);
+    padding-left: 18px;
+    position: relative;
+    margin-top: 8px;
+  }
+  ul.plain li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--warm);
+  }
+
+  .avoid {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    align-items: baseline;
+  }
+  .avoid .x { color: #A14A3A; font-size: 14px; }
+  .avoid p { margin: 0; }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin-top: 42px;
+  }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 22px;
+    border-top: 1px solid var(--rule);
+    font-size: 13.5px;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 40px 20px 60px; }
+    h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="top">
+    <div class="eyebrow">A short, practical guide</div>
+    <h1>Talking to your manager when the workload gets heavy</h1>
+    <p class="sub">The goal of this conversation isn't to vent — it's to give your manager something they can actually act on. These five moves will help you get there.</p>
+  </header>
+
+  <section>
+    <div class="num"><span class="n">1</span><h2>Get specific before you talk</h2></div>
+    <p class="lede">Vague stress is hard to act on. Specific facts are easy to act on.</p>
+    <ul class="plain">
+      <li>List what's actually on your plate right now, with rough time estimates.</li>
+      <li>Note what's slipping or will slip, and by when.</li>
+      <li>Decide what you need: fewer things, more time, more help, or clearer priorities. Pick one or two, not everything at once.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="num"><span class="n">2</span><h2>Open with the situation, not the emotion</h2></div>
+    <p class="lede">Lead with facts. Let the manager draw the conclusion that you're stretched, rather than opening with "I'm stressed."</p>
+    <div class="script">"I want to flag my workload before it affects delivery. Right now I'm carrying X, Y, and Z, and I think one of them is going to slip this week."</div>
+    <div class="script">"Can we find 20 minutes to look at my plate together? I think some of this needs to move or get reassigned."</div>
+  </section>
+
+  <section>
+    <div class="num"><span class="n">3</span><h2>Name the stakes, plainly</h2></div>
+    <p class="lede">It's fine to say the human part too — just pair it with impact, so it reads as information, not a complaint.</p>
+    <div class="script">"I've been working late most nights to keep up, and it's not sustainable at this pace. I want to fix this before quality or my health takes the hit."</div>
+  </section>
+
+  <section>
+    <div class="num"><span class="n">4</span><h2>Bring options, not just a problem</h2></div>
+    <p class="lede">Managers can act faster on a choice than on an open-ended problem.</p>
+    <ul class="plain">
+      <li>"I can push back the deadline on A, or hand off B to someone else — which makes more sense on your end?"</li>
+      <li>"If nothing can move, I need help deciding what 'good enough' looks like on the lower-priority items."</li>
+      <li>"Could we agree on what I should drop if something new comes in this week?"</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="num"><span class="n">5</span><h2>Close with a concrete next step</h2></div>
+    <p class="lede">End the conversation with something that will actually change, not just a sense that you were heard.</p>
+    <div class="script">"So to confirm — I'll deprioritize A, you'll let the team know, and we'll check in again Friday to see how it's landing. Does that work?"</div>
+  </section>
+
+  <hr class="divider">
+
+  <section style="margin-top:32px;">
+    <h2>A few things to avoid</h2>
+    <div class="avoid"><span class="x">✕</span><p>Apologizing repeatedly for raising it. You're giving useful information, not confessing a failure.</p></div>
+    <div class="avoid"><span class="x">✕</span><p>Comparing your load to a coworker's. It shifts the conversation away from what you actually need.</p></div>
+    <div class="avoid"><span class="x">✕</span><p>Waiting until you're at the breaking point. Raise it a notch earlier than feels urgent — it reads as foresight, not alarm.</p></div>
+    <div class="avoid"><span class="x">✕</span><p>Leaving without a next step. "Thanks for listening" isn't the same as "here's what changes."</p></div>
+  </section>
+
+  <footer>
+    If workload stress has been going on for a while and isn't easing after conversations like this, it's worth also talking to a doctor or a counselor — this guide covers the workplace conversation, not the toll it can take on you.
+  </footer>
+
+</div>
+</body>
+</html>
