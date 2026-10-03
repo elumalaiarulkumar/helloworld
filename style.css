@@ -9,6 +9,7 @@
   --navy: #132d4c;        /* deep navy panel */
   --blue: #2a5f9e;        /* accents, checks, links */
   --sky: #74aee3;         /* small status dots, accents on navy */
+  --forest: #1e3b2c;      /* dark green panel (For young adults) */
   --ink: #13202f;         /* main text */
   --ink-soft: #4b5a6c;    /* secondary text */
   --on-dark: #eaf1fa;
@@ -81,7 +82,14 @@ a { color: inherit; }
 }
 .panel-mist { background: var(--mist); }
 .panel-navy { background: var(--navy); color: var(--on-dark); }
-.panel-navy :focus-visible, .hero :focus-visible, .cta :focus-visible { outline-color: var(--sky); }
+/* dark green panel: reuses the navy panel rules with green-tinted accents */
+.panel-green {
+  background: var(--forest);
+  color: var(--on-dark);
+  --on-dark-soft: #b7cbbd;
+  --sky: #8fd1a8;
+}
+.panel-navy :focus-visible, .panel-green :focus-visible, .hero :focus-visible, .cta :focus-visible { outline-color: var(--sky); }
 
 .center { text-align: center; }
 .section-intro {
@@ -90,7 +98,7 @@ a { color: inherit; }
   max-width: 34rem;
 }
 .section-intro.center { margin-inline: auto; }
-.panel-navy .section-intro { color: var(--on-dark-soft); }
+.panel-navy .section-intro, .panel-green .section-intro { color: var(--on-dark-soft); }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -263,7 +271,7 @@ a { color: inherit; }
 .checklist { margin-top: 32px; }
 .checklist details { border-top: 1px solid var(--line); }
 .checklist details:last-child { border-bottom: 1px solid var(--line); }
-.panel-navy .checklist details { border-color: var(--line-dark); }
+.panel-navy .checklist details, .panel-green .checklist details { border-color: var(--line-dark); }
 
 .checklist summary {
   list-style: none;
@@ -286,7 +294,7 @@ a { color: inherit; }
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
-.panel-navy .checklist summary::before { border-color: var(--sky); }
+.panel-navy .checklist summary::before, .panel-green .checklist summary::before { border-color: var(--sky); }
 .checklist details:not([open]) summary { opacity: 0.6; }
 .checklist details:not([open]) summary:hover { opacity: 0.9; }
 .checklist details p {
@@ -295,7 +303,7 @@ a { color: inherit; }
   font-size: 0.95rem;
   max-width: 34rem;
 }
-.panel-navy .checklist details p { color: var(--on-dark-soft); }
+.panel-navy .checklist details p, .panel-green .checklist details p { color: var(--on-dark-soft); }
 
 .photo-wrap { margin: 0; position: relative; }
 .float-card {
