@@ -99,6 +99,16 @@ a { color: inherit; }
 }
 .section-intro.center { margin-inline: auto; }
 .panel-navy .section-intro, .panel-green .section-intro { color: var(--on-dark-soft); }
+/* small label after a heading, e.g. "(Coming soon!)" */
+.coming-soon {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: max(0.42em, 0.9rem);
+  font-weight: 500;
+  vertical-align: middle;
+  color: var(--sky);
+  white-space: nowrap;
+}
 
 /* ---------- Buttons ---------- */
 .btn {
