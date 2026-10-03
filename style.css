@@ -383,6 +383,14 @@ a { color: inherit; }
   gap: 10px;
 }
 .resource p { color: var(--ink-soft); font-size: 0.95rem; flex: 1; }
+/* a card whose title is a link: the whole card is clickable */
+.resource:has(.resource-link) { position: relative; transition: background-color 200ms ease; }
+.resource:has(.resource-link):hover { background: var(--panel-hover, #f1f6fc); }
+.resource-link { text-decoration: none; color: var(--blue); }
+.resource-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.resource-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.resource-link:focus-visible { outline: none; }
+.resource:has(.resource-link:focus-visible) { outline: 3px solid var(--blue); outline-offset: 3px; }
 .tag {
   align-self: flex-start;
   font-size: 0.8rem;
