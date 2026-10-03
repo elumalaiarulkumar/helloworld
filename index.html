@@ -20,8 +20,18 @@
 
   <!-- HERO: big photo panel with the navigation inside it -->
   <header class="panel hero" id="top">
-    <!-- PHOTO: hero.jpg (see the Photos note in style.css) -->
-    <div class="photo photo-hero" role="img" aria-label="A calm lake below blue mountains"></div>
+    <!-- PHOTOS: a slideshow of hero.jpg, hero2.jpg and hero3.jpg (see script.js).
+         To add a photo, copy one hero-slide line and change the file name and description. -->
+    <div class="photo photo-hero">
+      <div class="hero-slide is-active" style="background-image: url('hero.jpg')" role="img" aria-label="A calm lake below blue mountains"></div>
+      <div class="hero-slide hero-slide-bright" style="background-image: url('hero2.jpg')" role="img" aria-label="Tall grasses glowing in warm sunlight" aria-hidden="true"></div>
+      <div class="hero-slide" style="background-image: url('hero3.jpg')" role="img" aria-label="A quiet river under green trees" aria-hidden="true"></div>
+    </div>
+    <button class="slideshow-toggle" type="button" aria-pressed="false" hidden>
+      <svg class="icon-pause" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+      <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg>
+      <span class="slideshow-label">Pause slideshow</span>
+    </button>
 
     <nav class="nav" aria-label="Main">
       <a class="logo" href="#top" aria-label="Worry Free Mind home">
