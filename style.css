@@ -4,11 +4,12 @@
 /* Design tokens: change these to re-theme the whole site */
 :root {
   --page: #e6edf6;        /* soft blue-grey behind the panels */
-  --panel: #ffffff;
+  --panel: #d3e2f4;        /* soft blue panels (was white) */
   --mist: #e2ebf7;        /* pale blue panel */
   --navy: #132d4c;        /* deep navy panel */
   --blue: #2a5f9e;        /* accents, checks, links */
   --sky: #74aee3;         /* small status dots, accents on navy */
+  --forest: #1e3b2c;      /* dark green panel (For young adults) */
   --ink: #13202f;         /* main text */
   --ink-soft: #4b5a6c;    /* secondary text */
   --on-dark: #eaf1fa;
@@ -62,7 +63,7 @@ a { color: inherit; }
   position: absolute;
   left: -999px;
   top: 8px;
-  background: var(--panel);
+  background: var(--mist);
   padding: 8px 14px;
   border-radius: 8px;
   z-index: 10;
@@ -81,7 +82,14 @@ a { color: inherit; }
 }
 .panel-mist { background: var(--mist); }
 .panel-navy { background: var(--navy); color: var(--on-dark); }
-.panel-navy :focus-visible, .hero :focus-visible, .cta :focus-visible { outline-color: var(--sky); }
+/* dark green panel: reuses the navy panel rules with green-tinted accents */
+.panel-green {
+  background: var(--forest);
+  color: var(--on-dark);
+  --on-dark-soft: #b7cbbd;
+  --sky: #8fd1a8;
+}
+.panel-navy :focus-visible, .panel-green :focus-visible, .hero :focus-visible, .cta :focus-visible { outline-color: var(--sky); }
 
 .center { text-align: center; }
 .section-intro {
@@ -90,7 +98,7 @@ a { color: inherit; }
   max-width: 34rem;
 }
 .section-intro.center { margin-inline: auto; }
-.panel-navy .section-intro { color: var(--on-dark-soft); }
+.panel-navy .section-intro, .panel-green .section-intro { color: var(--on-dark-soft); }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -105,8 +113,8 @@ a { color: inherit; }
   cursor: pointer;
   transition: background-color 200ms ease, color 200ms ease;
 }
-.btn-light { background: var(--panel); color: var(--ink); }
-.btn-light:hover { background: var(--mist); }
+.btn-light { background: var(--mist); color: var(--ink); }
+.btn-light:hover { background: var(--panel); }
 
 /* ---------- Photos ----------
    Each photo spot shows a .jpg that sits next to index.html. To swap a photo,
@@ -233,6 +241,118 @@ a { color: inherit; }
   justify-items: start;
 }
 
+/* ---------- Sub page header (Resources, Team) ---------- */
+.page-header {
+  background: var(--navy);
+  color: var(--on-dark);
+  padding: clamp(20px, 3vw, 32px) var(--pad) var(--pad);
+}
+.page-header :focus-visible { outline-color: var(--sky); }
+.page-header-content {
+  margin-top: clamp(40px, 7vw, 88px);
+  display: grid;
+  gap: 16px;
+  justify-items: start;
+}
+.page-header h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 300;
+}
+.page-header p { color: var(--on-dark-soft); max-width: 34rem; }
+
+/* "Back to home" button: outlined so it doesn't compete with Contact us */
+.btn-back {
+  gap: 6px;
+  padding: 0 18px 0 12px;
+  border: 1px solid rgba(234, 241, 250, 0.45);
+  color: var(--on-dark);
+}
+.btn-back:hover { background: rgba(234, 241, 250, 0.12); }
+
+/* marks the page you're on in the menu */
+.nav-links a[aria-current="page"] {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+/* ---------- Exercise page (five-minute-reset.html) ---------- */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+.eyebrow-dark { color: var(--sky); font-weight: 500; font-size: 0.95rem; }
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--gap);
+  max-width: 46rem;
+}
+.step {
+  background: var(--panel);
+  border-radius: var(--radius-photo);
+  padding: clamp(20px, 3vw, 28px);
+  display: grid;
+  gap: 10px;
+}
+.step p { max-width: 38rem; }
+.step-time {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  color: var(--blue);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.step-time span { color: var(--ink-soft); font-weight: 400; }
+.step h3 { font-size: 1.35rem; font-weight: 400; }
+.breath {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.breath span {
+  background: var(--mist);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.95rem;
+}
+.breath strong { font-family: var(--font-head); font-weight: 500; margin-right: 4px; }
+.senses { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 6px; }
+.senses strong {
+  display: inline-grid;
+  place-items: center;
+  width: 1.8em;
+  height: 1.8em;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--on-dark);
+  font-family: var(--font-head);
+  font-weight: 500;
+}
+.notes {
+  margin-top: 32px;
+  max-width: 46rem;
+  display: grid;
+  gap: 8px;
+  color: var(--ink-soft);
+}
+.notes h3 { color: var(--ink); }
+.page-end-nav {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  align-items: center;
+}
+.btn-solid { background: var(--navy); color: var(--on-dark); }
+.btn-solid:hover { background: var(--blue); }
+.text-link { color: var(--blue); font-weight: 500; text-underline-offset: 4px; }
+
 /* ---------- About ---------- */
 .lead {
   font-size: clamp(1.4rem, 2.6vw, 2rem);
@@ -263,7 +383,7 @@ a { color: inherit; }
 .checklist { margin-top: 32px; }
 .checklist details { border-top: 1px solid var(--line); }
 .checklist details:last-child { border-bottom: 1px solid var(--line); }
-.panel-navy .checklist details { border-color: var(--line-dark); }
+.panel-navy .checklist details, .panel-green .checklist details { border-color: var(--line-dark); }
 
 .checklist summary {
   list-style: none;
@@ -286,7 +406,7 @@ a { color: inherit; }
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
-.panel-navy .checklist summary::before { border-color: var(--sky); }
+.panel-navy .checklist summary::before, .panel-green .checklist summary::before { border-color: var(--sky); }
 .checklist details:not([open]) summary { opacity: 0.6; }
 .checklist details:not([open]) summary:hover { opacity: 0.9; }
 .checklist details p {
@@ -295,14 +415,14 @@ a { color: inherit; }
   font-size: 0.95rem;
   max-width: 34rem;
 }
-.panel-navy .checklist details p { color: var(--on-dark-soft); }
+.panel-navy .checklist details p, .panel-green .checklist details p { color: var(--on-dark-soft); }
 
 .photo-wrap { margin: 0; position: relative; }
 .float-card {
   position: absolute;
   left: 20px;
   bottom: 20px;
-  background: var(--panel);
+  background: var(--mist);
   color: var(--ink);
   border-radius: var(--radius-small);
   padding: 12px 16px;
@@ -331,7 +451,7 @@ a { color: inherit; }
   gap: var(--gap);
 }
 .resource {
-  background: var(--mist);
+  background: #e8f0fa;
   border-radius: var(--radius-photo);
   padding: 24px;
   display: flex;
@@ -339,6 +459,14 @@ a { color: inherit; }
   gap: 10px;
 }
 .resource p { color: var(--ink-soft); font-size: 0.95rem; flex: 1; }
+/* a card whose title is a link: the whole card is clickable */
+.resource:has(.resource-link) { position: relative; transition: background-color 200ms ease; }
+.resource:has(.resource-link):hover { background: var(--panel-hover, #f1f6fc); }
+.resource-link { text-decoration: none; color: var(--blue); }
+.resource-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.resource-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.resource-link:focus-visible { outline: none; }
+.resource:has(.resource-link:focus-visible) { outline: 3px solid var(--blue); outline-offset: 3px; }
 .tag {
   align-self: flex-start;
   font-size: 0.8rem;
@@ -351,7 +479,7 @@ a { color: inherit; }
   margin-top: 32px;
   padding: 16px 20px;
   border-left: 3px solid var(--blue);
-  background: #f2f6fc;
+  background: #e8f0fa;
   border-radius: 0 var(--radius-small) var(--radius-small) 0;
   font-size: 0.95rem;
 }
@@ -439,7 +567,7 @@ a { color: inherit; }
     flex-basis: 100%;
     flex-direction: column;
     align-items: stretch;
-    background: var(--panel);
+    background: var(--mist);
     color: var(--ink);
     border-radius: var(--radius-small);
     padding: 8px;
@@ -463,3 +591,8 @@ a { color: inherit; }
   .logo { font-size: 1.1rem; }
   .menu-toggle { padding: 0 14px; }
 }
+
+/* Sub pages: the grid is the first thing in its panel, so no top gap.
+   Kept at the end so it wins over the .resource-grid and .team-grid margins. */
+.resource-grid-top,
+.team-grid-top { margin-top: 0; }
