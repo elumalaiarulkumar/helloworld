@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Simple Evening Steps That Make Rest More Likely</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F6F4EF;
+    --surface: #FFFFFF;
+    --ink: #2A2E33;
+    --ink-soft: #656C70;
+    --accent: #4C6B8A;
+    --accent-soft: #E7EDF2;
+    --rule: #E3DFD5;
+    --warm: #8A6A4C;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #191C20;
+      --surface: #212529;
+      --ink: #E9E7E0;
+      --ink-soft: #9FA5A9;
+      --accent: #8FAFCB;
+      --accent-soft: #232D36;
+      --rule: #32373B;
+      --warm: #C2A077;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #191C20;
+    --surface: #212529;
+    --ink: #E9E7E0;
+    --ink-soft: #9FA5A9;
+    --accent: #8FAFCB;
+    --accent-soft: #232D36;
+    --rule: #32373B;
+    --warm: #C2A077;
+  }
+
+  * { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 56px 28px 72px;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.25;
+    max-width: 500px;
+  }
+
+  .sub {
+    margin-top: 14px;
+    font-size: 16px;
+    color: var(--ink-soft);
+    max-width: 480px;
+  }
+
+  section { margin-top: 36px; }
+
+  .time {
+    display: inline-block;
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    color: var(--warm);
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 15.5px;
+    max-width: 580px;
+  }
+  p + p { margin-top: 8px; }
+
+  .lede { color: var(--ink-soft); margin-top: 6px; }
+
+  .card {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin-top: 12px;
+    font-size: 15px;
+  }
+
+  ul.plain {
+    margin-top: 10px;
+    padding-left: 0;
+    list-style: none;
+  }
+  ul.plain li {
+    font-size: 15.5px;
+    padding-left: 18px;
+    position: relative;
+    margin-top: 8px;
+  }
+  ul.plain li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--warm);
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin-top: 40px;
+  }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-size: 13.5px;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 40px 20px 60px; }
+    h1 { font-size: 27px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="eyebrow">A short, practical guide</div>
+    <h1>Simple evening steps that make rest more likely</h1>
+    <p class="sub">Rest isn't just something that happens when you lie down — it's something your evening either sets up or works against. These steps are small on purpose, so they're easy to actually keep.</p>
+  </header>
+
+  <section>
+    <span class="time">2–3 hours before bed</span>
+    <h2>Give your body a cutoff point</h2>
+    <p class="lede">Your body needs a clear signal that the day is ending, not a gradual fade.</p>
+    <ul class="plain">
+      <li>Have your last big meal and any caffeine well before this window — both can keep your system running when it should be slowing down.</li>
+      <li>If you exercise, do the hard version earlier in the day. A short walk in the evening is fine; a workout that spikes your heart rate close to bed usually isn't.</li>
+    </ul>
+  </section>
+
+  <section>
+    <span class="time">1 hour before bed</span>
+    <h2>Close the day on purpose</h2>
+    <p class="lede">Most racing thoughts at bedtime are unfinished business from the day looking for somewhere to land.</p>
+    <div class="card">Write down tomorrow's first three tasks, and anything still open from today. It doesn't need to be organized — the point is getting it out of your head and onto paper so your mind can stop holding it.</div>
+    <p>Then switch off work mode deliberately — close the laptop, put your phone in another room or on do-not-disturb, and treat this as the actual end of the workday, even if more could technically be done.</p>
+  </section>
+
+  <section>
+    <span class="time">30–45 minutes before bed</span>
+    <h2>Dim everything, including yourself</h2>
+    <p class="lede">Bright light and screens tell your brain it's still daytime. Low light tells it otherwise.</p>
+    <ul class="plain">
+      <li>Lower the lights in your space, or switch to a lamp instead of overhead lighting.</li>
+      <li>If you're on a screen, put it on night mode, or better, swap it for something analog — a book, stretching, folding laundry, anything that doesn't ask much of your eyes or your attention.</li>
+    </ul>
+  </section>
+
+  <section>
+    <span class="time">In bed</span>
+    <h2>Let your body downshift last</h2>
+    <p class="lede">This is where you stop trying to solve anything and just let your system slow down.</p>
+    <div class="card">A few slow breaths — in for 4, out for 6 — or a slow scan down your body noticing where you're holding tension, from your jaw down to your feet, releasing what you can.</div>
+    <p>If your mind is still busy, that's normal. You're not trying to force sleep — you're just giving your body permission to stop being on duty.</p>
+  </section>
+
+  <hr class="divider">
+
+  <section style="margin-top:28px;">
+    <h2>If you only do one thing</h2>
+    <p>Pick the task-dump step. Getting tomorrow's first three things out of your head and onto paper handles more racing-thoughts insomnia than almost anything else on this list.</p>
+  </section>
+
+  <footer>
+    If sleep stays hard most nights for a few weeks despite steps like these, it's worth mentioning to a doctor — ongoing sleep trouble is worth looking into directly rather than working around indefinitely.
+  </footer>
+
+</div>
+</body>
+</html>
