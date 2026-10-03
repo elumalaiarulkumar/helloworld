@@ -4,7 +4,7 @@
 /* Design tokens: change these to re-theme the whole site */
 :root {
   --page: #e6edf6;        /* soft blue-grey behind the panels */
-  --panel: #ffffff;
+  --panel: #d3e2f4;        /* soft blue panels (was white) */
   --mist: #e2ebf7;        /* pale blue panel */
   --navy: #132d4c;        /* deep navy panel */
   --blue: #2a5f9e;        /* accents, checks, links */
@@ -62,7 +62,7 @@ a { color: inherit; }
   position: absolute;
   left: -999px;
   top: 8px;
-  background: var(--panel);
+  background: var(--mist);
   padding: 8px 14px;
   border-radius: 8px;
   z-index: 10;
@@ -105,8 +105,8 @@ a { color: inherit; }
   cursor: pointer;
   transition: background-color 200ms ease, color 200ms ease;
 }
-.btn-light { background: var(--panel); color: var(--ink); }
-.btn-light:hover { background: var(--mist); }
+.btn-light { background: var(--mist); color: var(--ink); }
+.btn-light:hover { background: var(--panel); }
 
 /* ---------- Photos ----------
    Each photo spot shows a .jpg that sits next to index.html. To swap a photo,
@@ -302,7 +302,7 @@ a { color: inherit; }
   position: absolute;
   left: 20px;
   bottom: 20px;
-  background: var(--panel);
+  background: var(--mist);
   color: var(--ink);
   border-radius: var(--radius-small);
   padding: 12px 16px;
@@ -331,7 +331,7 @@ a { color: inherit; }
   gap: var(--gap);
 }
 .resource {
-  background: var(--mist);
+  background: #e8f0fa;
   border-radius: var(--radius-photo);
   padding: 24px;
   display: flex;
@@ -351,7 +351,7 @@ a { color: inherit; }
   margin-top: 32px;
   padding: 16px 20px;
   border-left: 3px solid var(--blue);
-  background: #f2f6fc;
+  background: #e8f0fa;
   border-radius: 0 var(--radius-small) var(--radius-small) 0;
   font-size: 0.95rem;
 }
@@ -439,7 +439,7 @@ a { color: inherit; }
     flex-basis: 100%;
     flex-direction: column;
     align-items: stretch;
-    background: var(--panel);
+    background: var(--mist);
     color: var(--ink);
     border-radius: var(--radius-small);
     padding: 8px;
