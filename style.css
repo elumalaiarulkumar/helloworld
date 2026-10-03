@@ -241,6 +241,42 @@ a { color: inherit; }
   justify-items: start;
 }
 
+/* ---------- Sub page header (Resources, Team) ---------- */
+.page-header {
+  background: var(--navy);
+  color: var(--on-dark);
+  padding: clamp(20px, 3vw, 32px) var(--pad) var(--pad);
+}
+.page-header :focus-visible { outline-color: var(--sky); }
+.page-header-content {
+  margin-top: clamp(40px, 7vw, 88px);
+  display: grid;
+  gap: 16px;
+  justify-items: start;
+}
+.page-header h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 300;
+}
+.page-header p { color: var(--on-dark-soft); max-width: 34rem; }
+
+/* "Back to home" button: outlined so it doesn't compete with Contact us */
+.btn-back {
+  gap: 6px;
+  padding: 0 18px 0 12px;
+  border: 1px solid rgba(234, 241, 250, 0.45);
+  color: var(--on-dark);
+}
+.btn-back:hover { background: rgba(234, 241, 250, 0.12); }
+
+/* marks the page you're on in the menu */
+.nav-links a[aria-current="page"] {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
 /* ---------- About ---------- */
 .lead {
   font-size: clamp(1.4rem, 2.6vw, 2rem);
@@ -471,3 +507,8 @@ a { color: inherit; }
   .logo { font-size: 1.1rem; }
   .menu-toggle { padding: 0 14px; }
 }
+
+/* Sub pages: the grid is the first thing in its panel, so no top gap.
+   Kept at the end so it wins over the .resource-grid and .team-grid margins. */
+.resource-grid-top,
+.team-grid-top { margin-top: 0; }
