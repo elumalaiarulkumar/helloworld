@@ -277,6 +277,82 @@ a { color: inherit; }
   text-decoration-thickness: 2px;
 }
 
+/* ---------- Exercise page (five-minute-reset.html) ---------- */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+.eyebrow-dark { color: var(--sky); font-weight: 500; font-size: 0.95rem; }
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--gap);
+  max-width: 46rem;
+}
+.step {
+  background: var(--panel);
+  border-radius: var(--radius-photo);
+  padding: clamp(20px, 3vw, 28px);
+  display: grid;
+  gap: 10px;
+}
+.step p { max-width: 38rem; }
+.step-time {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  color: var(--blue);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.step-time span { color: var(--ink-soft); font-weight: 400; }
+.step h3 { font-size: 1.35rem; font-weight: 400; }
+.breath {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.breath span {
+  background: var(--mist);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.95rem;
+}
+.breath strong { font-family: var(--font-head); font-weight: 500; margin-right: 4px; }
+.senses { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 6px; }
+.senses strong {
+  display: inline-grid;
+  place-items: center;
+  width: 1.8em;
+  height: 1.8em;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--on-dark);
+  font-family: var(--font-head);
+  font-weight: 500;
+}
+.notes {
+  margin-top: 32px;
+  max-width: 46rem;
+  display: grid;
+  gap: 8px;
+  color: var(--ink-soft);
+}
+.notes h3 { color: var(--ink); }
+.page-end-nav {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  align-items: center;
+}
+.btn-solid { background: var(--navy); color: var(--on-dark); }
+.btn-solid:hover { background: var(--blue); }
+.text-link { color: var(--blue); font-weight: 500; text-underline-offset: 4px; }
+
 /* ---------- About ---------- */
 .lead {
   font-size: clamp(1.4rem, 2.6vw, 2rem);
