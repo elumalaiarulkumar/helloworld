@@ -3,12 +3,19 @@
 // Put the current year in the footer
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Respond to button clicks
-const button = document.getElementById("greet-button");
-const output = document.getElementById("greet-output");
-let clicks = 0;
+// Open and close the menu on small screens
+const menuButton = document.querySelector(".menu-toggle");
+const navLinks = document.getElementById("nav-links");
 
-button.addEventListener("click", () => {
-  clicks += 1;
-  output.textContent = `Hello! You've clicked ${clicks} time${clicks === 1 ? "" : "s"}.`;
+menuButton.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", isOpen);
+});
+
+// Close the menu after choosing a link
+navLinks.addEventListener("click", (event) => {
+  if (event.target.closest("a")) {
+    navLinks.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+  }
 });
