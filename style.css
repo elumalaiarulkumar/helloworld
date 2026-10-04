@@ -559,7 +559,6 @@ a { color: inherit; }
   background: var(--panel);
   border: 1px dashed rgba(19, 32, 47, 0.3);
 }
-.role { color: var(--ink-soft); font-size: 0.95rem; }
 
 /* ---------- Contact (photo call-to-action) ---------- */
 .cta {
